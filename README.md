@@ -1,46 +1,161 @@
-# Getting Started with Create React App
+# Users-Albums
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+//todo: verify at end of project
 
-## Available Scripts
+Users-Albums is a React application built with TypeScript and Redux Toolkit, designed as part of the **Modern React with Redux [2024 Update]** course. This project allows you to manage users, their albums, and images within each album. It leverages `json-server` as a mock API and `axios` for data fetching. All data, including users, albums, and images, are generated randomly using `faker`.
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **User Management:** Create, read, update, and delete users.
+- **Album Management:** Manage albums for each user.
+- **Image Handling:** Add and view images within each album.
+- **Random Data Generation:** Uses `faker` to generate realistic dummy data.
+- **State Management:** Utilizes Redux Toolkit for efficient state management.
+- **API Interaction:** Communicates with a mock API using `axios` and `json-server`.
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **React** with **TypeScript**
+- **Redux Toolkit**
+- **json-server** for mock API
+- **axios** for HTTP requests
+- **faker** for generating dummy data
+- **React Router** for routing
+- **CSS Modules** for styling
 
-### `npm run build`
+## Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the repository:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   git clone https://github.com/your-username/users-albums.git
+   cd users-albums
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Install dependencies:**
 
-### `npm run eject`
+   ```bash
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+   or using Yarn:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   yarn install
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3. **Set up `json-server`:**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+   The project uses `json-server` to create a mock API. Ensure you have it installed globally:
 
-## Learn More
+   ```bash
+   npm install -g json-server
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. **Generate mock data:**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   The project includes a script to generate fake data using `faker`. Run the following command to generate `db.json`:
+
+   ```bash
+   npm run generate-data
+   ```
+
+5. **Start the mock API server:**
+
+   In one terminal window, run:
+
+   ```bash
+   json-server --watch db.json --port 5000
+   ```
+
+6. **Start the React application:**
+
+   In another terminal window, run:
+
+   ```bash
+   npm start
+   ```
+
+   The app should now be running at [http://localhost:3000](http://localhost:3000).
+
+## Usage
+
+- **View Users:** Navigate to the Users section to see a list of all users.
+- **Manage Albums:** Click on a user to view and manage their albums.
+- **Add Images:** Within an album, add or view images.
+- **CRUD Operations:** Perform create, read, update, and delete operations on users, albums, and images.
+
+## Project Structure
+
+```
+users-albums/
+├── public/
+├── src/
+│   ├── components/
+│   ├── features/
+│   │   ├── albums/
+│   │   ├── images/
+│   │   └── users/
+│   ├── app/
+│   ├── api/
+│   ├── hooks/
+│   ├── utils/
+│   ├── App.tsx
+│   └── index.tsx
+├── db.json
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+
+- **components/**: Reusable UI components.
+- **features/**: Redux slices for users, albums, and images.
+- **app/**: Store configuration.
+- **api/**: Axios instance and API calls.
+- **hooks/**: Custom React hooks.
+- **utils/**: Utility functions and helpers.
+- **db.json**: Mock database file generated by `faker`.
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. **Fork the repository**
+2. **Create a new branch:**
+
+   ```bash
+   git checkout -b feature/YourFeature
+   ```
+
+3. **Make your changes**
+4. **Commit your changes:**
+
+   ```bash
+   git commit -m "Add some feature"
+   ```
+
+5. **Push to the branch:**
+
+   ```bash
+   git push origin feature/YourFeature
+   ```
+
+6. **Open a Pull Request**
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+Happy coding! 🚀
