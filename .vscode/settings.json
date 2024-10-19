@@ -1,3 +1,3 @@
 {
-  "conventionalCommits.scopes": ["global", "api"]
+  "conventionalCommits.scopes": ["global", "api", "btn", "store"]
 }
