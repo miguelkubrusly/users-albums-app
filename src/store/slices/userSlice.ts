@@ -9,15 +9,17 @@ type User = {
 const userListSlice = createSlice({
   name: "user",
   initialState: {
-    userList: [] as User[],
+    data: [] as User[],
+    isLoading: false,
+    error: null,
     openIndex: 0,
   },
   reducers: {
     addUser(state, action) {
-      state.userList.push(action.payload);
+      state.data.push(action.payload);
     },
     removeUser(state, action) {
-      state.userList.splice(action.payload, 1);
+      state.data.splice(action.payload, 1);
     },
   },
 });
