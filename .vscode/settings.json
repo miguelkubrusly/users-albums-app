@@ -5,6 +5,7 @@
     "btn",
     "store",
     "skeleton",
-    "users"
+    "users",
+    "thunk"
   ]
 }
