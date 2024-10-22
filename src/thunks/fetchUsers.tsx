@@ -1,16 +1,12 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { usePause } from "../hooks/use-pause";
 
 const fetchUsers = createAsyncThunk("users/fetch", async () => {
   const response = await axios.get("http://localhost:3005/users");
 
-  //DEV ONLY: custom pause
-  const pause = (duration: number) => {
-    return new Promise((resolve) => {
-      setTimeout(resolve, duration);
-    });
-  };
-  await pause(2000);
+  //DEV ONLY: custom usePause
+  await usePause(2000);
 
   return response.data;
 });
