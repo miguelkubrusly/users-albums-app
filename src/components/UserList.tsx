@@ -1,7 +1,12 @@
+//todo
+
+//create user list render
+
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "../thunks/fetchUsers";
 import { AppDispatch, RootState } from "../store/store";
+import Skeleton from "./Skeleton";
 
 function UserList() {
   const dispatch = useDispatch<AppDispatch>();
@@ -15,7 +20,11 @@ function UserList() {
   }, [dispatch]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <Skeleton times={6} className="h-10 w-1000" />
+      </div>
+    );
   }
   if (error) {
     return <div>Error fetching data...</div>;
