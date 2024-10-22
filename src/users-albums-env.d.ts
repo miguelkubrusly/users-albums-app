@@ -5,7 +5,7 @@ declare global {
   type User = {
     name: string;
     albums?: any[];
-    id: string;
+    id: number;
   };
 
   type State = {
