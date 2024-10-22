@@ -20,11 +20,7 @@ function UserList() {
   }, [dispatch]);
 
   if (isLoading) {
-    return (
-      <div>
-        <Skeleton times={6} className="h-10 w-1000" />
-      </div>
-    );
+    return <Skeleton times={7} className="h-10 w-11/12 mx-auto mt-4" />;
   }
   if (error) {
     return <div>Error fetching data...</div>;

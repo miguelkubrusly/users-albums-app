@@ -6,7 +6,7 @@ type SkeletonProps = {
 };
 
 function Skeleton({ times, className }: SkeletonProps) {
-  const outerClassName = classNames(
+  const outerClassNames = classNames(
     "relative",
     "overflow-hidden",
     "bg-gray-200",
@@ -14,7 +14,7 @@ function Skeleton({ times, className }: SkeletonProps) {
     "mb-2.5",
     className
   );
-  const innerClassName = classNames(
+  const innerClassNames = classNames(
     "animate-shimmer",
     "absolute",
     "inset-0",
@@ -29,8 +29,8 @@ function Skeleton({ times, className }: SkeletonProps) {
     .fill(0)
     .map((_, i) => {
       return (
-        <div key={i} className={outerClassName}>
-          <div className={innerClassName} />
+        <div key={i} className={outerClassNames}>
+          <div className={innerClassNames} />
         </div>
       );
     });

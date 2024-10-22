@@ -10,7 +10,7 @@ const fetchUsers = createAsyncThunk("users/fetch", async () => {
       setTimeout(resolve, duration);
     });
   };
-  await pause(10000);
+  await pause(2000);
 
   return response.data;
 });
