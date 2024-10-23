@@ -42,7 +42,7 @@ function Button({
       className,
       "flex text-sm text-center px-3 py-1.5 border border-solid font-medium m-2 h-8",
       {
-        "border-black bg-gray-200 text-black hover:bg-gray-600":
+        "border-black bg-gray-100 text-black hover:bg-gray-200":
           !primary && !secondary && !success && !warning && !danger && !outline,
 
         "border-black text-black bg-transparent hover:bg-gray-200 hover:text-black":
