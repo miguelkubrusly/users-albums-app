@@ -22,7 +22,7 @@ function UserList() {
     loadUsers();
   }, [loadUsers]);
 
-  const alwaysShow = (
+  const fixedContent = (
     <div className="flex flex-row justify-between items-center m-3">
       <h1 className="m-2 text-xl">Users</h1>
       <Button
@@ -52,7 +52,7 @@ function UserList() {
 
   return (
     <div>
-      {alwaysShow}
+      {fixedContent}
       {variableContent}
     </div>
   );
