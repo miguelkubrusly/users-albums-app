@@ -25,7 +25,11 @@ function UserList() {
   const alwaysShow = (
     <div className="flex flex-row justify-between items-center m-3">
       <h1 className="m-2 text-xl">Users</h1>
-      <Button onClick={handleAddUser} loading={creatingUser || loadingUsers}>
+      <Button
+        onClick={handleAddUser}
+        outline
+        loading={creatingUser || loadingUsers}
+      >
         + Add User
       </Button>
       {createUserError && <div>Error creating user</div>}
