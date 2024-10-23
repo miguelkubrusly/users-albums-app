@@ -9,7 +9,7 @@ const addUser = createAsyncThunk("users/add", async () => {
   });
   //DEV ONLY: custom usePause
   await usePause(1000);
-  console.log(response.data);
+
   return response.data;
 });
 export { addUser };
