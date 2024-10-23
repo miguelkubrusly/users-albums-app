@@ -9,8 +9,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-const deleteUser = createAsyncThunk("users/delete", () => __awaiter(void 0, void 0, void 0, function* () {
-    const response = yield axios.delete("http://localhost:3005/users");
+const deleteUser = createAsyncThunk("users/delete", (id) => __awaiter(void 0, void 0, void 0, function* () {
+    const response = yield axios.delete(`http://localhost:3005/users/${id}`);
     return response.data;
 }));
+export { deleteUser };
 //# sourceMappingURL=removeUser.js.map
