@@ -10,9 +10,9 @@ declare global {
 
   type State = {
     data: User[];
-    isLoading: boolean;
-    error: SerializedError | null;
-    openIndex: number;
+    // isLoading: boolean;
+    // error: SerializedError | null;
+    openIndex?: number;
   };
 
   {
