@@ -11,14 +11,11 @@ const useLoading = () => {
     setLoading(true);
     setLoadingError(null);
   };
-
   const reject = (error: Error) => {
     setLoading(false);
     setLoadingError(error);
   };
-
   const fulfilled = () => setLoading(false);
-
   return {
     loading,
     loadingError,
