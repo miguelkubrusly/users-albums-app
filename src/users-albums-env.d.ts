@@ -5,7 +5,7 @@ declare global {
   type User = {
     name: string;
     albums?: any[];
-    id: number;
+    id: string;
   };
 
   type State = {
@@ -19,5 +19,4 @@ declare global {
     AppDispatch, RootState;
   }
 }
-
 export {};
