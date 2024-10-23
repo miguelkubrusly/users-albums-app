@@ -1,5 +1,6 @@
 import { twMerge } from "tailwind-merge";
 import classNames from "classnames";
+import { GoSync } from "react-icons/go";
 
 type ExcludeFromObject<T extends any[], U> = {
   [K in keyof T]: T[K] extends U ? never : T[K];
@@ -17,6 +18,7 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
     rounded: boolean;
     children: React.ReactNode;
     className: string;
+    loading: boolean;
   }> &
   Partial<
     Exclusive<["primary", "secondary", "success", "warning", "danger"], boolean>
@@ -32,12 +34,13 @@ function Button({
   rounded,
   children,
   className,
+  loading,
   ...rest
 }: ButtonProps) {
   const classes = twMerge(
     classNames(
       className,
-      "flex text-sm text-center px-3 py-1.5 border border-solid font-medium m-2",
+      "flex text-sm text-center px-3 py-1.5 border border-solid font-medium m-2 h-8",
       {
         "border-black bg-gray-200 text-black hover:bg-gray-600":
           !primary && !secondary && !success && !warning && !danger && !outline,
@@ -71,13 +74,15 @@ function Button({
           danger && !outline,
         "border-red-500 text-red-500 bg-transparent hover:bg-red-500 hover:text-white":
           danger && outline,
+
+        "opacity-60": loading,
       }
     )
   );
 
   return (
-    <button {...rest} className={classes}>
-      {children}
+    <button {...rest} disabled={loading} className={classes}>
+      {loading ? <GoSync className="animate-spin" /> : children}
     </button>
   );
 }
