@@ -1,0 +1,1 @@
+{"version":3,"file":"removeUser.js","sourceRoot":"","sources":["../../src/thunks/removeUser.ts"],"names":[],"mappings":";;;;;;;;;AAAA,OAAO,EAAE,gBAAgB,EAAE,MAAM,kBAAkB,CAAC;AACpD,OAAO,KAAK,MAAM,OAAO,CAAC;AAE1B,MAAM,UAAU,GAAG,gBAAgB,CAAC,cAAc,EAAE,GAAS,EAAE;IAC7D,MAAM,QAAQ,GAAG,MAAM,KAAK,CAAC,MAAM,CAAC,6BAA6B,CAAC,CAAC;IACnE,OAAO,QAAQ,CAAC,IAAI,CAAC;AACvB,CAAC,CAAA,CAAC,CAAC"}

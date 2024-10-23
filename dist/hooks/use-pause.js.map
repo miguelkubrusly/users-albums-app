@@ -1,0 +1,1 @@
+{"version":3,"file":"use-pause.js","sourceRoot":"","sources":["../../src/hooks/use-pause.ts"],"names":[],"mappings":"AAAA,MAAM,QAAQ,GAAG,CAAC,QAAgB,EAAE,EAAE;IACpC,OAAO,IAAI,OAAO,CAAC,CAAC,OAAO,EAAE,EAAE;QAC7B,UAAU,CAAC,OAAO,EAAE,QAAQ,CAAC,CAAC;IAChC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC;AACF,OAAO,EAAE,QAAQ,EAAE,CAAC"}

@@ -6,6 +6,8 @@
     "store",
     "skeleton",
     "users",
-    "thunk"
+    "thunk",
+    "hooks",
+    "ts"
   ]
 }
