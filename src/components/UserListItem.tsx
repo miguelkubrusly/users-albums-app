@@ -8,7 +8,11 @@ function UserListItem({ user }: { user: User }) {
   const [removeUser, removingUser, removeUserError] =
     useThunkWithArg(deleteUser);
 
-  const handleRemove = (id: string) => {
+  const handleRemove = (
+    event: React.MouseEvent<HTMLButtonElement>,
+    id: string
+  ) => {
+    event.stopPropagation();
     removeUser(id);
   };
 
@@ -19,7 +23,7 @@ function UserListItem({ user }: { user: User }) {
           className="mr-3"
           outline
           loading={removingUser}
-          onClick={() => handleRemove(user.id)}
+          onClick={(event) => handleRemove(event, user.id)}
         >
           <GoTrashcan className="scale-125" />
         </Button>
