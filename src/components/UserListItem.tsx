@@ -3,6 +3,7 @@ import { GoTrashcan } from "react-icons/go";
 import { useThunkWithArg } from "../hooks/use-thunk";
 import { deleteUser } from "../thunks/deleteUser";
 import ExpandablePanel from "./ExpandablePanel";
+import AlbumList from "./AlbumList";
 
 function UserListItem({ user }: { user: User }) {
   const [removeUser, removingUser, removeUserError] =
@@ -10,7 +11,7 @@ function UserListItem({ user }: { user: User }) {
 
   const handleRemove = (
     event: React.MouseEvent<HTMLButtonElement>,
-    id: string
+    id: number
   ) => {
     event.stopPropagation();
     removeUser(id);
@@ -36,7 +37,11 @@ function UserListItem({ user }: { user: User }) {
   return removeUserError ? (
     <div>Error Removing User</div>
   ) : (
-    <ExpandablePanel header={header}>CONTENT</ExpandablePanel>
+    <div>
+      <ExpandablePanel header={header}>
+        <AlbumList user={user} />
+      </ExpandablePanel>
+    </div>
   );
 }
 

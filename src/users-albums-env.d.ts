@@ -4,13 +4,11 @@ import { AppDispatch, RootState } from "./store/store";
 declare global {
   type User = {
     name: string;
-    albums?: any[];
-    id: string;
+    id: number;
   };
 
   type State = {
     data: User[];
-    openIndex?: number;
   };
 
   {

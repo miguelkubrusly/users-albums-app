@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { usePause } from "../hooks/use-pause";
 
-const deleteUser = createAsyncThunk("users/delete", async (id: string) => {
+const deleteUser = createAsyncThunk("users/delete", async (id: number) => {
   await axios.delete(`http://localhost:3005/users/${id}`);
 
   //DEV ONLY: custom usePause

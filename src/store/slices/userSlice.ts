@@ -3,7 +3,6 @@ import { deleteUser, fetchUsers, addUser } from "../store";
 
 const initialState: State = {
   data: [] as User[],
-  openIndex: 0,
 };
 
 const userSlice = createSlice({
