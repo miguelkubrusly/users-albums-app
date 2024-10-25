@@ -24,3 +24,5 @@ package-lock.json
 src/tmp/whole_project.txt
 db.json
 .vscode/settings.json
+.eslintignore
+.gitignore
