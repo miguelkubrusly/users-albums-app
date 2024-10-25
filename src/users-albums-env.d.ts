@@ -23,6 +23,16 @@ declare global {
     album: Album;
   };
 
+  type Photo = {
+    id: number;
+    albumId: number;
+    link: string;
+  };
+
+  type PhotoListProps = {
+    album: Album;
+  };
+
   {
     AppDispatch, RootState;
   }
