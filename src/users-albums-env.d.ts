@@ -11,6 +11,18 @@ declare global {
     data: User[];
   };
 
+  type Album = {
+    id: number;
+    title: string;
+    userId: number;
+  };
+
+  type FetchFnArgs = [string | Request, RequestInit?];
+
+  type AlbumsListItemProps = {
+    album: Album;
+  };
+
   {
     AppDispatch, RootState;
   }
