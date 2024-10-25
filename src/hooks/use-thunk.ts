@@ -1,29 +1,8 @@
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { AsyncThunk } from "@reduxjs/toolkit";
 import { AppDispatch } from "../store/store";
-
-const useLoading = () => {
-  const [loading, setLoading] = useState(false);
-  const [loadingError, setLoadingError] = useState<Error | null>(null);
-
-  const pending = () => {
-    setLoading(true);
-    setLoadingError(null);
-  };
-  const reject = (error: Error) => {
-    setLoading(false);
-    setLoadingError(error);
-  };
-  const fulfilled = () => setLoading(false);
-  return {
-    loading,
-    loadingError,
-    pending,
-    reject,
-    fulfilled,
-  };
-};
+import { useLoading } from "./use-loading";
 
 const useThunk = <Returned>(
   thunk: AsyncThunk<Returned, void, any>
@@ -62,4 +41,4 @@ const useThunkWithArg = <Returned, ThunkArg>(
   return [runThunkWithArg, loading.loading, loading.loadingError];
 };
 
-export { useLoading, useThunk, useThunkWithArg };
+export { useThunk, useThunkWithArg };
