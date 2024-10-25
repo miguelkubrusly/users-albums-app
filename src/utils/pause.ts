@@ -1,6 +1,6 @@
-const usePause = (duration: number) => {
+const pause = (duration: number) => {
   return new Promise((resolve) => {
     setTimeout(resolve, duration);
   });
 };
-export { usePause };
+export { pause };
