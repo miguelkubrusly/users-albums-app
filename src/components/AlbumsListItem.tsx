@@ -18,7 +18,7 @@ function AlbumsListItem({ album }: AlbumsListItemProps) {
     <>
       <Button
         className="mr-2 scale-75"
-        danger
+        secondary
         loading={results.isLoading}
         onClick={(event) => handleDeleteAlbum(event, album)}
       >
