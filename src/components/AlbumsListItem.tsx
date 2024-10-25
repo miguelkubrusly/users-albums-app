@@ -1,3 +1,4 @@
+import PhotoList from "./PhotoList";
 import ExpandablePanel from "./ExpandablePanel";
 import Button from "./Button";
 import { useDeleteAlbumMutation } from "../store/store";
@@ -27,6 +28,10 @@ function AlbumsListItem({ album }: AlbumsListItemProps) {
       {album.title}
     </>
   );
-  return <ExpandablePanel header={header}>Album Content!</ExpandablePanel>;
+  return (
+    <ExpandablePanel header={header}>
+      <PhotoList album={album} />
+    </ExpandablePanel>
+  );
 }
 export default AlbumsListItem;
