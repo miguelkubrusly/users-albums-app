@@ -11,10 +11,10 @@ function UserListItem({ user }: { user: User }) {
 
   const handleRemove = (
     event: React.MouseEvent<HTMLButtonElement>,
-    id: number
+    user: User
   ) => {
     event.stopPropagation();
-    removeUser(id);
+    removeUser(user.id);
   };
 
   const header = (
@@ -24,7 +24,7 @@ function UserListItem({ user }: { user: User }) {
           className="mr-3"
           outline
           loading={removingUser}
-          onClick={(event) => handleRemove(event, user.id)}
+          onClick={(event) => handleRemove(event, user)}
         >
           <GoTrashcan className="scale-125" />
         </Button>
