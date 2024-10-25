@@ -1,11 +1,12 @@
 import ExpandablePanel from "./ExpandablePanel";
 import Button from "./Button";
 import { useDeleteAlbumMutation } from "../store/store";
+import { GoTrashcan } from "react-icons/go";
 
 function AlbumsListItem({ album }: AlbumsListItemProps) {
   const [deleteAlbum, results] = useDeleteAlbumMutation();
 
-  const handleDelete = (
+  const handleDeleteAlbum = (
     event: React.MouseEvent<HTMLButtonElement>,
     album: Album
   ) => {
@@ -14,17 +15,17 @@ function AlbumsListItem({ album }: AlbumsListItemProps) {
   };
 
   const header = (
-    <div className="p-2 flex flex-row mb-2">
+    <>
       <Button
-        className="mr-3 scale-75"
+        className="mr-2 scale-75"
         danger
         loading={results.isLoading}
-        onClick={(event) => handleDelete(event, album)}
+        onClick={(event) => handleDeleteAlbum(event, album)}
       >
-        x
+        <GoTrashcan className="scale-125" />
       </Button>
       {album.title}
-    </div>
+    </>
   );
   return <ExpandablePanel header={header}>Album Content!</ExpandablePanel>;
 }
