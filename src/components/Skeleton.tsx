@@ -3,10 +3,17 @@ import classNames from "classnames";
 type SkeletonProps = {
   times: number;
   className: string;
+  gap?: number;
+  isRow?: boolean;
 };
 
-function Skeleton({ times, className }: SkeletonProps) {
-  const outerClassNames = classNames(
+function Skeleton({ times, className, gap = 0, isRow = false }: SkeletonProps) {
+  const outerClassNames = classNames(`flex`, {
+    "flex-row": isRow,
+    "flex-col": !isRow,
+  });
+
+  const middleClassNames = classNames(
     "relative",
     "overflow-hidden",
     "bg-gray-200",
@@ -29,12 +36,16 @@ function Skeleton({ times, className }: SkeletonProps) {
     .fill(0)
     .map((_, i) => {
       return (
-        <div key={i} className={outerClassNames}>
+        <div key={i} className={middleClassNames}>
           <div className={innerClassNames} />
         </div>
       );
     });
-  return <div>{renderedSkeleton}</div>;
+  return (
+    <div style={{ gap: `${gap}rem` }} className={outerClassNames}>
+      {renderedSkeleton}
+    </div>
+  );
 }
 
 export default Skeleton;
