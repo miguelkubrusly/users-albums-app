@@ -29,7 +29,7 @@ function AlbumsListItem({ album }: AlbumsListItemProps) {
     </>
   );
   return (
-    <ExpandablePanel header={header}>
+    <ExpandablePanel color=" bg-white" header={header}>
       <PhotoList album={album} />
     </ExpandablePanel>
   );

@@ -24,7 +24,7 @@ function UserList() {
 
   const fixedContent = (
     <div className="flex flex-row justify-between items-center m-3">
-      <h1 className="m-2 text-xl">Users</h1>
+      <h1 className="m-2 text-3xl font-semibold">Users</h1>
       <Button
         onClick={handleAddUser}
         outline
@@ -52,9 +52,9 @@ function UserList() {
   );
 
   return (
-    <div className=" max-w-md">
+    <div className=" max-w-screen-lg">
       {fixedContent}
-      <div className=" max-w-sm">{variableContent}</div>
+      <div className=" max-w-screen-md">{variableContent}</div>
     </div>
   );
 }

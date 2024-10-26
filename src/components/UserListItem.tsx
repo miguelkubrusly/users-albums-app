@@ -24,15 +24,12 @@ function UserListItem({ user }: { user: User }) {
           className="mr-4"
           loading={removingUser}
           rounded
-          secondary
-          outline
           onClick={(event) => handleRemove(event, user)}
         >
           <GoTrashcan />
         </Button>
       </div>
-
-      {user.name}
+      <div className="text-xl font-bold ml-3">{user.name}</div>
     </>
   );
 
@@ -40,7 +37,7 @@ function UserListItem({ user }: { user: User }) {
     <div>Error Removing User</div>
   ) : (
     <div>
-      <ExpandablePanel header={header}>
+      <ExpandablePanel color="bg-green-400" header={header}>
         <AlbumList user={user} />
       </ExpandablePanel>
     </div>
