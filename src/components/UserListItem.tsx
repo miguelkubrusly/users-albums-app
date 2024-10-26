@@ -21,12 +21,14 @@ function UserListItem({ user }: { user: User }) {
     <>
       <div className=" scale-75">
         <Button
-          className="mr-3"
-          outline
+          className="mr-4"
           loading={removingUser}
+          rounded
+          secondary
+          outline
           onClick={(event) => handleRemove(event, user)}
         >
-          <GoTrashcan className="scale-125" />
+          <GoTrashcan />
         </Button>
       </div>
 

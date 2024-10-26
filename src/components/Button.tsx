@@ -40,7 +40,7 @@ function Button({
   const classes = twMerge(
     classNames(
       className,
-      "flex text-sm items-center justify-center text-center px-3 py-1.5 border border-solid font-medium m-2 h-8",
+      "flex text-sm items-center justify-center text-center px-3 py-1.5 border border-solid font-medium m-2 h-8 min-w-fit",
       {
         "border-black bg-gray-100 text-black hover:bg-gray-200":
           !primary && !secondary && !success && !warning && !danger && !outline,

@@ -28,6 +28,7 @@ function UserList() {
       <Button
         onClick={handleAddUser}
         outline
+        rounded
         loading={creatingUser || loadingUsers}
       >
         + Add User
@@ -38,7 +39,7 @@ function UserList() {
 
   const variableContent = loadingUsers ? (
     <div>
-      <Skeleton times={7} className="h-10 w-full" />
+      <Skeleton times={6} className="h-10 w-full" />
     </div>
   ) : loadUsersError ? (
     <div>Error Fetching Data...</div>
@@ -51,9 +52,9 @@ function UserList() {
   );
 
   return (
-    <div>
+    <div className=" max-w-md">
       {fixedContent}
-      {variableContent}
+      <div className=" max-w-sm">{variableContent}</div>
     </div>
   );
 }

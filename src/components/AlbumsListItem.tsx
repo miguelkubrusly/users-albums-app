@@ -18,8 +18,8 @@ function AlbumsListItem({ album }: AlbumsListItemProps) {
   const header = (
     <>
       <Button
-        className="mr-2 scale-75"
-        secondary
+        className="mr-2 scale-50"
+        rounded
         loading={results.isLoading}
         onClick={(event) => handleDeleteAlbum(event, album)}
       >

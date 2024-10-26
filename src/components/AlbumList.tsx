@@ -14,7 +14,7 @@ function AlbumList({ user }: { user: User }) {
 
   let content;
   if (isFetching) {
-    content = <Skeleton className="h-10 w-full" times={4} />;
+    content = <Skeleton className="h-10 w-full" times={3} />;
   } else if (error) {
     content = <div>Error fetching albums...</div>;
   } else {
@@ -28,7 +28,7 @@ function AlbumList({ user }: { user: User }) {
       <div className="m-2 flex flex-row items-center justify-between">
         <h3 className="text-lg font-bold">Album for {user.name}</h3>
       </div>
-      <Button loading={results.isLoading} onClick={handleAdd}>
+      <Button rounded loading={results.isLoading} onClick={handleAdd}>
         + Add Album
       </Button>
       {content}
