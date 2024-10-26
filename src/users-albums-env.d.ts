@@ -26,7 +26,7 @@ declare global {
   type Photo = {
     id: number;
     albumId: number;
-    link: string;
+    url: string;
   };
 
   type PhotoListProps = {

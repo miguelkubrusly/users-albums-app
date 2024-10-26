@@ -7,7 +7,8 @@ const albumsApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:3005",
     fetchFn: async (...args: FetchFnArgs) => {
-      await pause(1000);
+      //DEV ONLY
+      await pause(500);
       return fetch(...args);
     },
   }),
