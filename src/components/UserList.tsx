@@ -52,9 +52,9 @@ function UserList() {
   );
 
   return (
-    <div className=" max-w-screen-lg">
+    <div className=" max-w-screen-md">
       {fixedContent}
-      <div className=" max-w-screen-md">{variableContent}</div>
+      <div className=" max-w-screen-sm">{variableContent}</div>
     </div>
   );
 }
