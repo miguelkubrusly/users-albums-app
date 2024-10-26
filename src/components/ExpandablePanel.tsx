@@ -22,7 +22,7 @@ function ExpandablePanel({
     <div className={"mb-2 border rounded " + color}>
       <div
         onClick={handleOpenClick}
-        className="flex justify-between items-center cursor-pointer"
+        className="flex justify-between items-center cursor-pointer mr-6"
       >
         <div className="flex flex-row items-center justify-between">
           {header}
